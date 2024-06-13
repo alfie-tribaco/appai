@@ -1,53 +1,30 @@
-import 'package:appai/appai_router.dart';
+import 'package:appai/appai.dart';
+import 'package:appai/injection/injectable.dart';
 import 'package:appai/secrets.dart';
+import 'package:appai_core/appai_core.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp(
-      options: const FirebaseOptions(
-    apiKey: AppSecrets.fbAppKey,
-    appId: AppSecrets.fbAppId,
-    messagingSenderId: AppSecrets.fbSenderId,
-    projectId: AppSecrets.fbProjectId,
-  ));
-  FlutterError.onError = (errorDetails) {
-    FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
-  };
-  PlatformDispatcher.instance.onError = (error, stack) {
-    FirebaseCrashlytics.instance
-        .recordError(error, stack, fatal: true, reason: "Fatal Error");
-    return true;
-  };
+    options: const FirebaseOptions(
+      apiKey: AppSecrets.fbAppKey,
+      appId: AppSecrets.fbAppId,
+      messagingSenderId: AppSecrets.fbSenderId,
+      projectId: AppSecrets.fbProjectId,
+    ),
+  );
 
-  // final remoteConfig = FirebaseRemoteConfig.instance;
-  // await remoteConfig.setConfigSettings(RemoteConfigSettings(
-  //   fetchTimeout: const Duration(minutes: 1),
-  //   minimumFetchInterval: const Duration(hours: 1),
-  // ));
+  //* Crashlytics
+  AppaiCrashlytics().initializeCrashlytics();
 
-  runApp(MyApp());
-}
+  //* Remote Config Firebase
+  await AppaiRemoteConfig().initializeRemoteConfig();
 
-class MyApp extends StatelessWidget {
-  MyApp({super.key});
+  //* Injectable
+  configureDependencies();
 
-  final _appRouter = AppaiRouter();
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'Appai',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      routerConfig: _appRouter.config(),
-    );
-  }
+  runApp(Appai());
 }

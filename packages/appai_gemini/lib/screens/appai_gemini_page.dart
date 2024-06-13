@@ -9,11 +9,14 @@ class AppaiGeminiPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: ElevatedButton(
-            onPressed: () {
-              throw Exception('test');
-            },
-            child: const Text('Appai Gemeni Page')),
+        child: Visibility(
+          visible: true,
+          child: ElevatedButton(
+              onPressed: () {
+                throw Exception('test');
+              },
+              child: const Text('Appai Gemeni Page')),
+        ),
       ),
     );
   }
