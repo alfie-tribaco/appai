@@ -43,6 +43,7 @@ dependencies:
   firebase_crashlytics: ^4.0.0
   firebase_core: ^3.0.0
   cloud_firestore: ^5.0.0
+  firebase_remote_config: ^5.0.1
 
   injectable: ^2.4.2
   injectable_generator: ^2.6.1

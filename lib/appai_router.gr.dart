@@ -20,7 +20,8 @@ abstract class _$AppaiRouter extends RootStackRouter {
         routeData: routeData,
         child: const HomePage(),
       );
-    }
+    },
+    ...AppaiGeminiModule().pagesMap,
   };
 }
 

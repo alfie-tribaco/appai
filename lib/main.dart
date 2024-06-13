@@ -19,9 +19,17 @@ void main() async {
     FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
   };
   PlatformDispatcher.instance.onError = (error, stack) {
-    FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
+    FirebaseCrashlytics.instance
+        .recordError(error, stack, fatal: true, reason: "Fatal Error");
     return true;
   };
+
+  // final remoteConfig = FirebaseRemoteConfig.instance;
+  // await remoteConfig.setConfigSettings(RemoteConfigSettings(
+  //   fetchTimeout: const Duration(minutes: 1),
+  //   minimumFetchInterval: const Duration(hours: 1),
+  // ));
+
   runApp(MyApp());
 }
 
