@@ -39,6 +39,13 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  appai_minigame:
+    dependency: "direct main"
+    description:
+      path: "packages/appai_minigame"
+      relative: true
+    source: path
+    version: "0.0.1"
   args:
     dependency: transitive
     description:

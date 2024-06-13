@@ -35,6 +35,8 @@ dependencies:
 
   appai_gemini:
     path: packages/appai_gemini
+  appai_minigame:
+    path: packages/appai_minigame
   appai_core:
     path: packages/appai_core
 

@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
-class AppaiGeminiPage extends StatelessWidget {
+final class AppaiGeminiPage extends StatelessWidget {
   const AppaiGeminiPage({super.key});
 
   @override
@@ -15,7 +15,7 @@ class AppaiGeminiPage extends StatelessWidget {
               onPressed: () {
                 throw Exception('test');
               },
-              child: const Text('Appai Gemeni Page')),
+              child: const Text('Appai Gemini Page')),
         ),
       ),
     );

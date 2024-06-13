@@ -15,6 +15,12 @@ abstract class _$AppaiRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    DashBoardRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const DashBoardPage(),
+      );
+    },
     HomeRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -22,7 +28,22 @@ abstract class _$AppaiRouter extends RootStackRouter {
       );
     },
     ...AppaiGeminiModule().pagesMap,
+    ...AppaiMiniGameModule().pagesMap,
   };
+}
+
+/// generated route for
+/// [DashBoardPage]
+class DashBoardRoute extends PageRouteInfo<void> {
+  const DashBoardRoute({List<PageRouteInfo>? children})
+      : super(
+          DashBoardRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'DashBoardRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
