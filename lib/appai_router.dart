@@ -1,19 +1,23 @@
+import 'package:appai/crash_guard.dart';
 import 'package:appai/home/screens/home_page.dart';
 import 'package:appai_gemini/appai_gemini_module.dart';
+import 'package:appai_gemini/appai_gemini_module.gm.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 
 part 'appai_router.gr.dart';
 
 @AutoRouterConfig(modules: [AppaiGeminiModule])
-class AppaiRouter extends _$AppaiRouter implements AutoRouteGuard {
+class AppaiRouter extends _$AppaiRouter {
   @override
   List<AutoRoute> get routes => [
-        AutoRoute(path: '/', page: HomeRoute.page),
+        AutoRoute(
+            path: '/',
+            page: HomeRoute.page,
+            initial: true,
+            guards: [CrashGuard()]),
+        AutoRoute(
+            path: '/AppaiGemini',
+            page: AppaiGeminiRoute.page,
+            guards: [CrashGuard()]),
       ];
-
-  @override
-  void onNavigation(NavigationResolver resolver, StackRouter router) {
-    FirebaseCrashlytics.instance.setCustomKey('router', router.routeData.name);
-  }
 }
