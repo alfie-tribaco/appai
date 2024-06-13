@@ -3,13 +3,19 @@ import 'package:flutter/foundation.dart';
 
 class AppaiCrashlytics {
   void initializeCrashlytics() {
-    //TODO: Differentiate the two Crashlytics
+    //* Record error occured inside flutter
     FlutterError.onError = (errorDetails) {
+      //* Fatal
       FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
+      //* Non- Fatal
+      FirebaseCrashlytics.instance.recordError(errorDetails, errorDetails.stack,
+          reason: "Non-Fatal Error", fatal: false);
     };
+
+    //* Fatal Error Outside Flutter framework
     PlatformDispatcher.instance.onError = (error, stack) {
-      FirebaseCrashlytics.instance
-          .recordError(error, stack, fatal: true, reason: "Fatal Error");
+      FirebaseCrashlytics.instance.recordError(error, stack,
+          fatal: true, reason: "Outside Flutter Framework");
       return true;
     };
   }

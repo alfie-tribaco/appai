@@ -13,7 +13,7 @@ final class AppaiGeminiPage extends StatelessWidget {
           visible: true,
           child: ElevatedButton(
               onPressed: () {
-                throw Exception('test');
+                throw Error();
               },
               child: const Text('Appai Gemini Page')),
         ),

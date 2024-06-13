@@ -1,1 +1,4 @@
-abstract class RegisterModule {}
+import 'package:injectable/injectable.dart';
+
+@module
+abstract class AppModule {}
