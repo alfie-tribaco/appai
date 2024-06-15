@@ -2,6 +2,7 @@ import 'package:appai/appai.dart';
 import 'package:appai/injection/injectable.dart';
 import 'package:appai/secrets.dart';
 import 'package:appai_core/appai_core.dart';
+import 'package:appai_gemini/services/gemini_repository.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
@@ -24,10 +25,13 @@ void main() async {
   //* Crashlytics
   AppaiCrashlytics().initializeCrashlytics();
 
+  //* Set userID to crashlytics report
   FirebaseCrashlytics.instance.setUserIdentifier("2525252525");
 
   //* Remote Config Firebase
   await getIt<FirebaseRemoteConfigService>().init();
+
+  getIt<IGeminiRepository>().requestPrompt('test');
 
   runApp(Appai());
 }

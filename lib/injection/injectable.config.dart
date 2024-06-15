@@ -9,6 +9,7 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:appai_core/injectable_micro_package.module.dart' as _i3;
+import 'package:appai_gemini/injectable_micro_package.module.dart' as _i4;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
@@ -24,6 +25,7 @@ extension GetItInjectableX on _i1.GetIt {
       environmentFilter,
     );
     await _i3.AppaiCorePackageModule().init(gh);
+    await _i4.AppaiGeminiPackageModule().init(gh);
     return this;
   }
 }

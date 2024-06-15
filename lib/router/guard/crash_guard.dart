@@ -5,7 +5,6 @@ class CrashGuard extends AutoRouteGuard {
   @override
   void onNavigation(NavigationResolver resolver, StackRouter router) {
     FirebaseCrashlytics.instance.setCustomKey('router', resolver.route.path);
-
     resolver.next();
   }
 }
