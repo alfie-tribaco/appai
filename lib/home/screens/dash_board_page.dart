@@ -1,5 +1,7 @@
 import 'package:appai/home/widgets/nav_bar.dart';
+import 'package:appai/injection/injectable.dart';
 import 'package:appai/router/appai_router.dart';
+import 'package:appai_core/utils/appai_logger.dart';
 import 'package:appai_gemini/appai_gemini_module.gm.dart';
 import 'package:appai_minigame/appai_minigame_module.gm.dart';
 import 'package:auto_route/auto_route.dart';
@@ -22,6 +24,12 @@ final class DashBoardPage extends StatelessWidget {
         child: child,
       ),
       bottomNavigationBuilder: (_, tabsRouter) {
+        //* Set Custom Key for current tab
+        getIt<AppaiLogger>().crashKey(
+          'current_tab_index',
+          tabsRouter.activeIndex,
+        );
+
         return NavBar(
           currentIndex: tabsRouter.activeIndex,
           onTap: tabsRouter.setActiveIndex,

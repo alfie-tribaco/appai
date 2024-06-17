@@ -11,7 +11,7 @@ class AppaiLogger {
     crashlytics.log(log);
   }
 
-  void crashKey(String key, String value) {
+  void crashKey(String key, dynamic value) {
     crashlytics.setCustomKey(key, value);
   }
 }

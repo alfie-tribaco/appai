@@ -19,13 +19,16 @@ class GeminiRepository extends IGeminiRepository {
   Future<Either<GeminiFailure, Fact>> generateFact(String prompt) async {
     try {
       final model = GenerativeModel(
-        model: 'gemini-1.5-flash-latest',
-        apiKey: AppSecrets.apiKey,
-      );
+          model: 'gemini-1.5-flash-latest',
+          apiKey: AppSecrets.apiKey,
+          safetySettings: [
+            SafetySetting(
+                HarmCategory.sexuallyExplicit, HarmBlockThreshold.high)
+          ]);
 
       final content = [
         Content.text("Generate one random fact about: $prompt"),
-        Content.text(factPromptFormat)
+        Content.text(factPromptFormat),
       ];
       final response = await model.generateContent(content);
 

@@ -1,3 +1,4 @@
+import 'package:appai/home/widgets/home_body.dart';
 import 'package:appai/injection/injectable.dart';
 import 'package:appai_core/utils/appai_logger.dart';
 import 'package:auto_route/auto_route.dart';
@@ -33,9 +34,7 @@ class _HomePageState extends State<HomePage> {
 
             throw Error();
           },
-          child: const Center(
-            child: Text('Home Page'),
-          ),
+          child: const HomeBody(),
         ),
       ),
     );
