@@ -1,3 +1,4 @@
+import 'package:appai_gemini/model/fact.dart';
 import 'package:appai_gemini/services/gemini_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,7 +19,7 @@ class GeminiActorBloc extends Bloc<GeminiActorEvent, GeminiActorState> {
 
   Future<void> _onSubmitted(Submitted event, Emitter emit) async {
     emit(const SubmitInProgress());
-    final result = await _geminiRepository.requestPrompt(event.prompt);
+    final result = await _geminiRepository.generateFact(event.prompt);
 
     result.fold((f) {
       emit(const SubmitFailure());

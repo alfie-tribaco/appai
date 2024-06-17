@@ -9,22 +9,45 @@ class GeminiOutputResult extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<GeminiActorBloc, GeminiActorState>(
         builder: (context, state) {
+      if (state is SubmitInProgress) {
+        return const CircularProgressIndicator.adaptive();
+      }
+
       if (state is SubmitSuccess) {
         return Container(
-            height: 400,
             width: double.infinity,
-            color: Colors.blueGrey,
+            color: const Color.fromARGB(26, 158, 134, 134),
             child: SingleChildScrollView(
                 child: Padding(
               padding: const EdgeInsets.all(16.0),
-              child: Text(state.result),
+              child: Column(
+                children: [
+                  Text(
+                    state.result.title,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(fontSize: 20),
+                  ),
+                  const SizedBox(height: 12),
+                  Text(
+                    state.result.description,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(fontSize: 12),
+                  ),
+                ],
+              ),
             )));
-      } else {
+      } else if (state is SubmitFailure) {
         return Container(
-            height: 200,
+            padding: const EdgeInsets.only(top: 20),
             width: double.infinity,
-            color: Colors.blueGrey,
-            child: const Text("Wala pa result"));
+            child: const Text(
+              "Oops Something went wrong. Make sure you type a topic and try again.",
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.red),
+            ));
+      } else {
+        return const SizedBox(
+            height: 200, width: double.infinity, child: Text(""));
       }
     });
   }

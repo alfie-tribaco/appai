@@ -12,7 +12,7 @@ class GeminiButton extends StatelessWidget {
       onPressed: () {
         context.read<GeminiActorBloc>().add(Submitted(controller.text));
       },
-      child: const Text('Submit'),
+      child: const Text('Generate Random Fact'),
     );
   }
 }

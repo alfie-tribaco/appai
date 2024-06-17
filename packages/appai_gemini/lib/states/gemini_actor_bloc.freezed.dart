@@ -226,7 +226,7 @@ mixin _$GeminiActorState {
     required TResult Function() initial,
     required TResult Function() submitInProgress,
     required TResult Function() submitFailure,
-    required TResult Function(String result) submitSuccess,
+    required TResult Function(Fact result) submitSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -234,7 +234,7 @@ mixin _$GeminiActorState {
     TResult? Function()? initial,
     TResult? Function()? submitInProgress,
     TResult? Function()? submitFailure,
-    TResult? Function(String result)? submitSuccess,
+    TResult? Function(Fact result)? submitSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -242,7 +242,7 @@ mixin _$GeminiActorState {
     TResult Function()? initial,
     TResult Function()? submitInProgress,
     TResult Function()? submitFailure,
-    TResult Function(String result)? submitSuccess,
+    TResult Function(Fact result)? submitSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -332,7 +332,7 @@ class _$InitialImpl implements Initial {
     required TResult Function() initial,
     required TResult Function() submitInProgress,
     required TResult Function() submitFailure,
-    required TResult Function(String result) submitSuccess,
+    required TResult Function(Fact result) submitSuccess,
   }) {
     return initial();
   }
@@ -343,7 +343,7 @@ class _$InitialImpl implements Initial {
     TResult? Function()? initial,
     TResult? Function()? submitInProgress,
     TResult? Function()? submitFailure,
-    TResult? Function(String result)? submitSuccess,
+    TResult? Function(Fact result)? submitSuccess,
   }) {
     return initial?.call();
   }
@@ -354,7 +354,7 @@ class _$InitialImpl implements Initial {
     TResult Function()? initial,
     TResult Function()? submitInProgress,
     TResult Function()? submitFailure,
-    TResult Function(String result)? submitSuccess,
+    TResult Function(Fact result)? submitSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -446,7 +446,7 @@ class _$SubmitInProgressImpl implements SubmitInProgress {
     required TResult Function() initial,
     required TResult Function() submitInProgress,
     required TResult Function() submitFailure,
-    required TResult Function(String result) submitSuccess,
+    required TResult Function(Fact result) submitSuccess,
   }) {
     return submitInProgress();
   }
@@ -457,7 +457,7 @@ class _$SubmitInProgressImpl implements SubmitInProgress {
     TResult? Function()? initial,
     TResult? Function()? submitInProgress,
     TResult? Function()? submitFailure,
-    TResult? Function(String result)? submitSuccess,
+    TResult? Function(Fact result)? submitSuccess,
   }) {
     return submitInProgress?.call();
   }
@@ -468,7 +468,7 @@ class _$SubmitInProgressImpl implements SubmitInProgress {
     TResult Function()? initial,
     TResult Function()? submitInProgress,
     TResult Function()? submitFailure,
-    TResult Function(String result)? submitSuccess,
+    TResult Function(Fact result)? submitSuccess,
     required TResult orElse(),
   }) {
     if (submitInProgress != null) {
@@ -560,7 +560,7 @@ class _$SubmitFailureImpl implements SubmitFailure {
     required TResult Function() initial,
     required TResult Function() submitInProgress,
     required TResult Function() submitFailure,
-    required TResult Function(String result) submitSuccess,
+    required TResult Function(Fact result) submitSuccess,
   }) {
     return submitFailure();
   }
@@ -571,7 +571,7 @@ class _$SubmitFailureImpl implements SubmitFailure {
     TResult? Function()? initial,
     TResult? Function()? submitInProgress,
     TResult? Function()? submitFailure,
-    TResult? Function(String result)? submitSuccess,
+    TResult? Function(Fact result)? submitSuccess,
   }) {
     return submitFailure?.call();
   }
@@ -582,7 +582,7 @@ class _$SubmitFailureImpl implements SubmitFailure {
     TResult Function()? initial,
     TResult Function()? submitInProgress,
     TResult Function()? submitFailure,
-    TResult Function(String result)? submitSuccess,
+    TResult Function(Fact result)? submitSuccess,
     required TResult orElse(),
   }) {
     if (submitFailure != null) {
@@ -639,7 +639,7 @@ abstract class _$$SubmitSuccessImplCopyWith<$Res> {
           _$SubmitSuccessImpl value, $Res Function(_$SubmitSuccessImpl) then) =
       __$$SubmitSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String result});
+  $Res call({Fact result});
 }
 
 /// @nodoc
@@ -653,13 +653,13 @@ class __$$SubmitSuccessImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? result = null,
+    Object? result = freezed,
   }) {
     return _then(_$SubmitSuccessImpl(
-      result: null == result
+      result: freezed == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Fact,
     ));
   }
 }
@@ -670,7 +670,7 @@ class _$SubmitSuccessImpl implements SubmitSuccess {
   const _$SubmitSuccessImpl({required this.result});
 
   @override
-  final String result;
+  final Fact result;
 
   @override
   String toString() {
@@ -682,11 +682,12 @@ class _$SubmitSuccessImpl implements SubmitSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SubmitSuccessImpl &&
-            (identical(other.result, result) || other.result == result));
+            const DeepCollectionEquality().equals(other.result, result));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, result);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(result));
 
   @JsonKey(ignore: true)
   @override
@@ -700,7 +701,7 @@ class _$SubmitSuccessImpl implements SubmitSuccess {
     required TResult Function() initial,
     required TResult Function() submitInProgress,
     required TResult Function() submitFailure,
-    required TResult Function(String result) submitSuccess,
+    required TResult Function(Fact result) submitSuccess,
   }) {
     return submitSuccess(result);
   }
@@ -711,7 +712,7 @@ class _$SubmitSuccessImpl implements SubmitSuccess {
     TResult? Function()? initial,
     TResult? Function()? submitInProgress,
     TResult? Function()? submitFailure,
-    TResult? Function(String result)? submitSuccess,
+    TResult? Function(Fact result)? submitSuccess,
   }) {
     return submitSuccess?.call(result);
   }
@@ -722,7 +723,7 @@ class _$SubmitSuccessImpl implements SubmitSuccess {
     TResult Function()? initial,
     TResult Function()? submitInProgress,
     TResult Function()? submitFailure,
-    TResult Function(String result)? submitSuccess,
+    TResult Function(Fact result)? submitSuccess,
     required TResult orElse(),
   }) {
     if (submitSuccess != null) {
@@ -770,10 +771,10 @@ class _$SubmitSuccessImpl implements SubmitSuccess {
 }
 
 abstract class SubmitSuccess implements GeminiActorState {
-  const factory SubmitSuccess({required final String result}) =
+  const factory SubmitSuccess({required final Fact result}) =
       _$SubmitSuccessImpl;
 
-  String get result;
+  Fact get result;
   @JsonKey(ignore: true)
   _$$SubmitSuccessImplCopyWith<_$SubmitSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
