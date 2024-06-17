@@ -7,6 +7,7 @@
 import 'dart:async' as _i2;
 
 import 'package:appai_gemini/services/gemini_repository.dart' as _i3;
+import 'package:appai_gemini/states/gemini_actor_bloc.dart' as _i4;
 import 'package:injectable/injectable.dart' as _i1;
 
 class AppaiGeminiPackageModule extends _i1.MicroPackageModule {
@@ -14,5 +15,7 @@ class AppaiGeminiPackageModule extends _i1.MicroPackageModule {
   @override
   _i2.FutureOr<void> init(_i1.GetItHelper gh) {
     gh.factory<_i3.IGeminiRepository>(() => _i3.GeminiRepository());
+    gh.factory<_i4.GeminiActorBloc>(
+        () => _i4.GeminiActorBloc(gh<_i3.IGeminiRepository>()));
   }
 }

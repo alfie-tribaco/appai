@@ -16,10 +16,17 @@ dependencies:
 
   firebase_crashlytics: ^4.0.0
 
+  freezed: ^2.5.2
+  freezed_annotation: ^2.4.1
+
+  flutter_bloc: ^8.1.6
+
   injectable: ^2.4.2
   get_it: ^7.7.0
 
   google_generative_ai: ^0.4.3
+
+  fpdart: ^1.1.0
 
 dev_dependencies:
   flutter_test:

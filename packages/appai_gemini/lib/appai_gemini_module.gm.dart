@@ -17,7 +17,7 @@ abstract class $AppaiGeminiModule extends _i2.AutoRouterModule {
     AppaiGeminiRoute.name: (routeData) {
       return _i2.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i1.AppaiGeminiPage(),
+        child: _i2.WrappedRoute(child: const _i1.AppaiGeminiPage()),
       );
     }
   };
