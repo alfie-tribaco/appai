@@ -30,6 +30,9 @@ app/**/ios/Flutter/.last_build_id
 .pub-cache/
 .pub/
 app/build/
+/build/
+/**/doc/api/
+/**/ios/Flutter/.last_build_id
 
 # Symbolication related
 app.*.symbols
