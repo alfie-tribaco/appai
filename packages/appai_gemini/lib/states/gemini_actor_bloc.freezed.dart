@@ -640,6 +640,8 @@ abstract class _$$SubmitSuccessImplCopyWith<$Res> {
       __$$SubmitSuccessImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Fact result});
+
+  $FactCopyWith<$Res> get result;
 }
 
 /// @nodoc
@@ -653,14 +655,22 @@ class __$$SubmitSuccessImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? result = freezed,
+    Object? result = null,
   }) {
     return _then(_$SubmitSuccessImpl(
-      result: freezed == result
+      result: null == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
               as Fact,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $FactCopyWith<$Res> get result {
+    return $FactCopyWith<$Res>(_value.result, (value) {
+      return _then(_value.copyWith(result: value));
+    });
   }
 }
 
@@ -682,12 +692,11 @@ class _$SubmitSuccessImpl implements SubmitSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SubmitSuccessImpl &&
-            const DeepCollectionEquality().equals(other.result, result));
+            (identical(other.result, result) || other.result == result));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(result));
+  int get hashCode => Object.hash(runtimeType, result);
 
   @JsonKey(ignore: true)
   @override

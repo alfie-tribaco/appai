@@ -21,6 +21,8 @@ class GeminiRepository extends IGeminiRepository {
       final model = GenerativeModel(
           model: 'gemini-1.5-flash-latest',
           apiKey: AppSecrets.apiKey,
+          systemInstruction: Content.text(factPromptFormat),
+          generationConfig: GenerationConfig(),
           safetySettings: [
             SafetySetting(
                 HarmCategory.sexuallyExplicit, HarmBlockThreshold.high)
@@ -28,7 +30,6 @@ class GeminiRepository extends IGeminiRepository {
 
       final content = [
         Content.text("Generate one random fact about: $prompt"),
-        Content.text(factPromptFormat),
       ];
       final response = await model.generateContent(content);
 
