@@ -16,7 +16,7 @@ final class DashBoardPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
       routes: const [
-        AppaiChatRoute(),
+        ChatRoute(),
         HomeRoute(),
         AppaiGeminiRoute(),
       ],

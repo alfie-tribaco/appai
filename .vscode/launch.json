@@ -1,0 +1,113 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "appai",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "app",
+            "cwd": "app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "app (profile mode)",
+            "cwd": "app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "app (release mode)",
+            "cwd": "app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "appai_chat",
+            "cwd": "packages\\appai_chat",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "appai_chat (profile mode)",
+            "cwd": "packages\\appai_chat",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "appai_chat (release mode)",
+            "cwd": "packages\\appai_chat",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "appai_core",
+            "cwd": "packages\\appai_core",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "appai_core (profile mode)",
+            "cwd": "packages\\appai_core",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "appai_core (release mode)",
+            "cwd": "packages\\appai_core",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "appai_gemini",
+            "cwd": "packages\\appai_gemini",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "appai_gemini (profile mode)",
+            "cwd": "packages\\appai_gemini",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "appai_gemini (release mode)",
+            "cwd": "packages\\appai_gemini",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "appai_widgets",
+            "cwd": "packages\\appai_widgets",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "appai_widgets (profile mode)",
+            "cwd": "packages\\appai_widgets",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "appai_widgets (release mode)",
+            "cwd": "packages\\appai_widgets",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

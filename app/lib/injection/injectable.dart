@@ -1,3 +1,5 @@
+import 'package:appai_chat/injectable_micro_package.module.dart';
+
 import 'injectable.config.dart';
 import 'package:appai_core/injectable_micro_package.module.dart';
 import 'package:appai_gemini/injectable_micro_package.module.dart';
@@ -13,5 +15,6 @@ final getIt = GetIt.instance;
     externalPackageModulesBefore: [
       ExternalModule(AppaiCorePackageModule),
       ExternalModule(AppaiGeminiPackageModule),
+      ExternalModule(AppaiChatPackageModule)
     ])
 void configureDependencies() => getIt.init();

@@ -22,9 +22,7 @@ class AppaiRouter extends _$AppaiRouter {
               guards: [CrashGuard()]),
           AutoRoute(path: 'Home', page: HomeRoute.page, guards: [CrashGuard()]),
           AutoRoute(
-              path: 'AppaiMinigame',
-              page: AppaiChatRoute.page,
-              guards: [CrashGuard()]),
+              path: 'AppaiChat', page: ChatRoute.page, guards: [CrashGuard()]),
         ]),
       ];
 }
