@@ -28,7 +28,7 @@ abstract class _$AppaiRouter extends RootStackRouter {
       );
     },
     ...AppaiGeminiModule().pagesMap,
-    ...AppaiMiniGameModule().pagesMap,
+    ...AppaiChatModule().pagesMap,
   };
 }
 

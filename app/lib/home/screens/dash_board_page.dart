@@ -1,9 +1,10 @@
+import 'package:appai_chat/appai_chat_module.gm.dart';
+
 import '../widgets/nav_bar.dart';
 import '../../injection/injectable.dart';
 import '../../router/appai_router.dart';
 import 'package:appai_core/utils/appai_logger.dart';
 import 'package:appai_gemini/appai_gemini_module.gm.dart';
-import 'package:appai_minigame/appai_minigame_module.gm.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,7 @@ final class DashBoardPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
       routes: const [
-        AppaiMiniGameRoute(),
+        AppaiChatRoute(),
         HomeRoute(),
         AppaiGeminiRoute(),
       ],

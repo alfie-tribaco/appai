@@ -12,9 +12,9 @@ class NavBar extends StatelessWidget {
       onTap: onTap,
       currentIndex: currentIndex,
       items: const [
-        BottomNavigationBarItem(icon: Icon(Icons.games), label: 'Mini Game'),
+        BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Chat'),
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-        BottomNavigationBarItem(icon: Icon(Icons.code), label: 'Gemini'),
+        BottomNavigationBarItem(icon: Icon(Icons.fact_check), label: 'Facts'),
       ],
     );
   }

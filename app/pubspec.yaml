@@ -35,8 +35,8 @@ dependencies:
 
   appai_gemini:
     path: ../packages/appai_gemini
-  appai_minigame:
-    path: ../packages/appai_minigame
+  appai_chat:
+    path: ../packages/appai_chat
   appai_core:
     path: ../packages/appai_core
 
