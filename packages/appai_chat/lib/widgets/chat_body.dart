@@ -4,7 +4,6 @@ import 'package:appai_chat/widgets/chat_input.dart';
 import 'package:appai_chat/widgets/chat_output.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_generative_ai/google_generative_ai.dart';
 
 class ChatBody extends StatefulWidget {
   const ChatBody({super.key});
@@ -24,18 +23,6 @@ class _ChatBodyState extends State<ChatBody> {
     _textController.dispose();
     _textFieldFocus.dispose();
     super.dispose();
-  }
-
-  void _scrollDown() {
-    WidgetsBinding.instance.addPostFrameCallback(
-      (_) => _scrollController.animateTo(
-        _scrollController.position.maxScrollExtent,
-        duration: const Duration(
-          milliseconds: 750,
-        ),
-        curve: Curves.easeOutCirc,
-      ),
-    );
   }
 
   @override
@@ -71,9 +58,11 @@ class _ChatBodyState extends State<ChatBody> {
                                     ), (session) {
                               return ChatButton(
                                 isLoading: state.submitLoading,
-                                submit: () => context
-                                    .read<ChatActorBloc>()
-                                    .add(Sent(_textController.text, session)),
+                                submit: () {
+                                  context
+                                      .read<ChatActorBloc>()
+                                      .add(Sent(_textController.text, session));
+                                },
                               );
                             }));
                   },

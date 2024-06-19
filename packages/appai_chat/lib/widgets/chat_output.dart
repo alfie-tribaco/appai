@@ -2,7 +2,6 @@ import 'package:appai_chat/states/chat_actor_bloc.dart';
 import 'package:appai_chat/widgets/chat_bubble.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fpdart/fpdart.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 
 class ChatOutput extends StatelessWidget {

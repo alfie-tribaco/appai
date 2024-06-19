@@ -15,7 +15,7 @@ class AppaiChatPackageModule extends _i1.MicroPackageModule {
   @override
   _i2.FutureOr<void> init(_i1.GetItHelper gh) {
     gh.factory<_i3.IChatRepository>(() => _i3.ChatRepository());
-    gh.factory<_i4.ChatActorBloc>(
+    gh.singleton<_i4.ChatActorBloc>(
         () => _i4.ChatActorBloc(gh<_i3.IChatRepository>()));
   }
 }

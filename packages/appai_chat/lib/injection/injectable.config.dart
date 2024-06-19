@@ -28,7 +28,7 @@ extension GetItInjectableX on _i1.GetIt {
     );
     await _i3.AppaiChatPackageModule().init(gh);
     gh.factory<_i4.IChatRepository>(() => _i4.ChatRepository());
-    gh.factory<_i5.ChatActorBloc>(
+    gh.singleton<_i5.ChatActorBloc>(
         () => _i5.ChatActorBloc(gh<_i4.IChatRepository>()));
     return this;
   }

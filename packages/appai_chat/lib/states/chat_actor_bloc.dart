@@ -10,7 +10,7 @@ part 'chat_actor_bloc.freezed.dart';
 part 'chat_actor_event.dart';
 part 'chat_actor_state.dart';
 
-@injectable
+@singleton
 class ChatActorBloc extends Bloc<ChatActorEvent, ChatActorState> {
   final IChatRepository _chatrepository;
   ChatActorBloc(this._chatrepository) : super(ChatActorState.initial()) {
