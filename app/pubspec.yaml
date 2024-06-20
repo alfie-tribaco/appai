@@ -37,6 +37,8 @@ dependencies:
     path: ../packages/appai_gemini
   appai_chat:
     path: ../packages/appai_chat
+  appai_story:
+    path: ../packages/appai_story
   appai_core:
     path: ../packages/appai_core
 

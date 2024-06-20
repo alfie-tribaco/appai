@@ -35,11 +35,12 @@ class _ChatBodyState extends State<ChatBody> {
             flex: 13,
             child: ChatOutput(
               scrollController: _scrollController,
+              focusNode: _textFieldFocus,
             ),
           ),
           const SizedBox(height: 14),
-          Expanded(
-            flex: 1,
+          SizedBox(
+            height: 60,
             child: Row(
               children: [
                 Expanded(
@@ -59,9 +60,12 @@ class _ChatBodyState extends State<ChatBody> {
                               return ChatButton(
                                 isLoading: state.submitLoading,
                                 submit: () {
-                                  context
-                                      .read<ChatActorBloc>()
-                                      .add(Sent(_textController.text, session));
+                                  context.read<ChatActorBloc>().add(
+                                        Sent(_textController.text, session),
+                                      );
+
+                                  _textController.clear();
+                                  _textFieldFocus.requestFocus();
                                 },
                               );
                             }));
@@ -107,26 +111,4 @@ class _ChatBodyState extends State<ChatBody> {
 //       _textFieldFocus.requestFocus();
 //     }
 //   }
-
-  void _showError(String message) {
-    showDialog<void>(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: const Text('Something went wrong'),
-          content: SingleChildScrollView(
-            child: Text(message),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: const Text('OK'),
-            )
-          ],
-        );
-      },
-    );
-  }
 }

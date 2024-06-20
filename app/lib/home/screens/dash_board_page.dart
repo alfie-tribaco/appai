@@ -1,8 +1,8 @@
 import 'package:appai_chat/appai_chat_module.gm.dart';
+import 'package:appai_story/appai_story_module.gm.dart';
 
 import '../widgets/nav_bar.dart';
 import '../../injection/injectable.dart';
-import '../../router/appai_router.dart';
 import 'package:appai_core/utils/appai_logger.dart';
 import 'package:appai_gemini/appai_gemini_module.gm.dart';
 import 'package:auto_route/auto_route.dart';
@@ -17,7 +17,7 @@ final class DashBoardPage extends StatelessWidget {
     return AutoTabsScaffold(
       routes: const [
         ChatRoute(),
-        HomeRoute(),
+        StoryRoute(),
         AppaiGeminiRoute(),
       ],
       transitionBuilder: (context, child, animation) => FadeTransition(

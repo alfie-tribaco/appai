@@ -1,3 +1,6 @@
+import 'package:appai_story/appai_story_module.dart';
+import 'package:appai_story/appai_story_module.gm.dart';
+
 import '../home/screens/dash_board_page.dart';
 import 'guard/crash_guard.dart';
 import '../home/screens/home_page.dart';
@@ -9,7 +12,8 @@ import 'package:auto_route/auto_route.dart';
 
 part 'appai_router.gr.dart';
 
-@AutoRouterConfig(modules: [AppaiGeminiModule, AppaiChatModule])
+@AutoRouterConfig(
+    modules: [AppaiGeminiModule, AppaiChatModule, AppaiStoryModule])
 class AppaiRouter extends _$AppaiRouter {
   @override
   List<AutoRoute> get routes => [
@@ -20,7 +24,10 @@ class AppaiRouter extends _$AppaiRouter {
               path: 'AppaiGemini',
               page: AppaiGeminiRoute.page,
               guards: [CrashGuard()]),
-          AutoRoute(path: 'Home', page: HomeRoute.page, guards: [CrashGuard()]),
+          AutoRoute(
+              path: 'AppaiStory',
+              page: StoryRoute.page,
+              guards: [CrashGuard()]),
           AutoRoute(
               path: 'AppaiChat', page: ChatRoute.page, guards: [CrashGuard()]),
         ]),
