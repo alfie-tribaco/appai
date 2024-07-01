@@ -13,7 +13,7 @@ class NavBar extends StatelessWidget {
       currentIndex: currentIndex,
       items: const [
         BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Chat'),
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+        BottomNavigationBarItem(icon: Icon(Icons.book), label: 'Story'),
         BottomNavigationBarItem(icon: Icon(Icons.fact_check), label: 'Facts'),
       ],
     );

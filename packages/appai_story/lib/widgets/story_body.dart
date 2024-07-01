@@ -21,12 +21,14 @@ class _StoryBodyState extends State<StoryBody> {
       padding: const EdgeInsets.all(16),
       child: Column(
         children: [
-          const Text(
-            'Read a story',
-            style: TextStyle(
-              fontSize: 24,
-              color: Colors.brown,
-              fontWeight: FontWeight.bold,
+          Semantics(
+            child: const Text(
+              'Read a story',
+              style: TextStyle(
+                fontSize: 24,
+                color: Colors.brown,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
           Container(

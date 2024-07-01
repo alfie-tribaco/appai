@@ -47,9 +47,12 @@ class ChatOutput extends StatelessWidget {
                             .whereType<TextPart>()
                             .map<String>((e) => e.text)
                             .join('');
-                        return ChatBubble(
-                          text: text,
-                          isFromUser: content.role == 'user',
+                        return Semantics(
+                          label: 'This is a chat',
+                          child: ChatBubble(
+                            text: text,
+                            isFromUser: content.role == 'user',
+                          ),
                         );
                       },
                       itemCount: history.length,

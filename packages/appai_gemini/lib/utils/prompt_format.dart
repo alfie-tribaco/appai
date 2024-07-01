@@ -7,4 +7,6 @@ Return the generate fact in JSON using the following structure:
 
 Strictly use this format for all of the response.
 factTitle should be a string type,  factDescription is also should be string type.
+
+
 ''';

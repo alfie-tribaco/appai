@@ -25,13 +25,13 @@ class GeminiOutputResult extends StatelessWidget {
                   Text(
                     state.result.title,
                     textAlign: TextAlign.center,
-                    style: const TextStyle(fontSize: 20),
+                    textScaler: const TextScaler.linear(1.4),
                   ),
                   const SizedBox(height: 12),
                   Text(
                     state.result.description,
                     textAlign: TextAlign.center,
-                    style: const TextStyle(fontSize: 12),
+                    textScaler: const TextScaler.linear(0.9),
                   ),
                 ],
               ),

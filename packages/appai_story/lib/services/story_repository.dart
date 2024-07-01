@@ -25,7 +25,7 @@ final class StoryRepository extends IStoryRepository {
           ]);
 
       final content = [
-        Content.text("Generate a interesting story about: $requestTopic"),
+        Content.text("Generate an interesting story about: $requestTopic"),
       ];
       final response = model.generateContentStream(content);
 

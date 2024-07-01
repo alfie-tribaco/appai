@@ -71,6 +71,8 @@ dependencies:
   logger: ^2.3.0
   fpdart: ^1.1.0
 
+  accessibility_tools: ^2.2.0
+
 
 dev_dependencies:
   flutter_test:

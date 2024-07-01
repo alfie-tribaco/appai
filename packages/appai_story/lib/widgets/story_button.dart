@@ -16,7 +16,10 @@ class StoryButton extends StatelessWidget {
         controller.clear();
         listResult.clear();
       },
-      icon: const Icon(Icons.book),
+      icon: const Icon(
+        Icons.book,
+        semanticLabel: 'request a story',
+      ),
     );
   }
 }

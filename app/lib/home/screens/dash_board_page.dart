@@ -1,3 +1,4 @@
+import 'package:accessibility_tools/accessibility_tools.dart';
 import 'package:appai_chat/appai_chat_module.gm.dart';
 import 'package:appai_story/appai_story_module.gm.dart';
 
@@ -14,28 +15,32 @@ final class DashBoardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AutoTabsScaffold(
-      routes: const [
-        ChatRoute(),
-        StoryRoute(),
-        AppaiGeminiRoute(),
-      ],
-      transitionBuilder: (context, child, animation) => FadeTransition(
-        opacity: animation,
-        child: child,
-      ),
-      bottomNavigationBuilder: (_, tabsRouter) {
-        //* Set Custom Key for current tab
-        getIt<AppaiLogger>().crashKey(
-          'current_tab_index',
-          tabsRouter.activeIndex,
-        );
+    return AccessibilityTools(
+      enableButtonsDrag: true,
+      checkFontOverflows: true,
+      child: AutoTabsScaffold(
+        routes: const [
+          ChatRoute(),
+          StoryRoute(),
+          AppaiGeminiRoute(),
+        ],
+        transitionBuilder: (context, child, animation) => FadeTransition(
+          opacity: animation,
+          child: child,
+        ),
+        bottomNavigationBuilder: (_, tabsRouter) {
+          //* Set Custom Key for current tab
+          getIt<AppaiLogger>().crashKey(
+            'current_tab_index',
+            tabsRouter.activeIndex,
+          );
 
-        return NavBar(
-          currentIndex: tabsRouter.activeIndex,
-          onTap: tabsRouter.setActiveIndex,
-        );
-      },
+          return NavBar(
+            currentIndex: tabsRouter.activeIndex,
+            onTap: tabsRouter.setActiveIndex,
+          );
+        },
+      ),
     );
   }
 }

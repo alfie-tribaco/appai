@@ -10,11 +10,17 @@ class GeminiInputBox extends StatelessWidget {
       children: [
         const Text(
           "Random Fact Generator",
-          style: TextStyle(color: Colors.black, fontSize: 18),
+          textScaler: TextScaler.linear(1.5),
+          style: TextStyle(
+            color: Colors.black,
+          ),
         ),
         const Text(
           "Enter a topic you're curious about and discover an interesting fact!",
-          style: TextStyle(color: Colors.black54, fontSize: 11),
+          textScaler: TextScaler.linear(0.8),
+          style: TextStyle(
+            color: Colors.black54,
+          ),
         ),
         const SizedBox(height: 20),
         Container(
@@ -22,6 +28,7 @@ class GeminiInputBox extends StatelessWidget {
           child: TextField(
             textAlign: TextAlign.center,
             controller: textController,
+            decoration: const InputDecoration(hintText: 'Input Topics'),
           ),
         ),
       ],
